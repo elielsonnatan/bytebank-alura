@@ -9,10 +9,11 @@ export class AppComponent {
   title = 'bytebank';
   destino: number;
   valor: number;
-  transferencia: any;
+  transferencias: any[] = [];
 
   transferir($event) {
     console.log($event);
-    this.transferencia = $event
+    const transferencia = {...$event, data: new Date()};
+    this.transferencias.push(transferencia);
   }
 }
